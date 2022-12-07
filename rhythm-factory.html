@@ -1,0 +1,193 @@
+<style>
+  body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+ 
+  table {
+    border-collapse: collapse;
+
+  }
+
+  th,
+  td {
+    border-width: .5px;
+    border-style: solid;
+    border-color: lightgrey;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+
+  }
+
+  .lucy {
+    font-size: 14px;
+  }
+
+  .jelly {
+    display: inline-block;
+  }
+
+  #party {
+    overflow: scroll;
+    height: 100px;
+    width: 300px;
+  }
+</style>
+
+
+<label for="rhyMe">rhythm:</label>
+
+<select id="rhyMe">
+  <option value="45">45</option>
+  <option value="12">12</option>
+  <option value="24">24</option>
+  <option value="33">33</option>
+  <option value="44">44</option>
+
+  <option value="56">56</option>
+</select>
+
+<fieldset class="jelly">
+  <legend>Pulse Count</legend>
+  <div>
+    <input type="checkbox" id="pulse1" value="1">
+    <label for="coding">1</label>
+
+    <input type="checkbox" id="pulse2" value="2">
+    <label for="music">2</label>
+
+    <input type="checkbox" id="pulse3" value="3">
+    <label for="coding">3</label>
+
+    <input type="checkbox" id="pulse4" value="4">
+    <label for="music">4</label>
+  </div>
+  <div>
+    <input type="checkbox" id="pulse5" value="5">
+    <label for="coding">5</label>
+
+    <input type="checkbox" id="pulse6" value="6">
+    <label for="music">6</label>
+
+    <input type="checkbox" id="pulse7" value="7">
+    <label for="coding">7</label>
+
+    <input type="checkbox" id="pulse8" value="8" checked>
+    <label for="music">8</label>
+  </div>
+</fieldset>
+
+
+<fieldset class="jelly">
+  <legend>Beat Count</legend>
+  <div>
+    <input type="checkbox" id="beat1" value="1">
+    <label for="coding">1</label>
+
+    <input type="checkbox" id="beat2" value="2">
+    <label for="music">2</label>
+
+    <input type="checkbox" id="beat3" value="3" checked>
+    <label for="coding">3</label>
+
+    <input type="checkbox" id="beat4" value="4">
+    <label for="music">4</label>
+  </div>
+  <div>
+    <input type="checkbox" id="beat5" value="5">
+    <label for="coding">5</label>
+
+    <input type="checkbox" id="beat6" value="6">
+    <label for="music">6</label>
+
+    <input type="checkbox" id="beat7" value="7">
+    <label for="coding">7</label>
+
+    <input type="checkbox" id="beat8" value="8">
+    <label for="music">8</label>
+  </div>
+</fieldset>
+
+
+<div class="jelly" id="party">
+
+</div>
+
+
+
+<br>
+<br>
+
+<button onclick="brush()">transform</button>
+<button onclick="showMe()">showMe</button>
+
+<fieldset class="jelly">
+  <legend>Additional Info</legend>
+  <div>
+    <input type="checkbox" id="singlet" checked>
+    <label>Singlet</label>
+    <input type="checkbox" id="zeroMe">start at 0
+  </div>
+  <div>
+    <input type="checkbox" id="duplet">
+    <label>Duplets</label>
+  </div>
+  <div>
+    <input type="checkbox" id="triplet">
+    <label for="music">Triplets</label>
+  </div>
+  <div>
+    <input type="checkbox" id="customMe">
+    <label for="music">Custom</label>
+    <input id="custom1" type="text" size="1">
+    <input id="custom2" type="text" size="1">
+    <input id="custom3" type="text" size="1">
+    <input id="custom4" type="text" size="1">
+  </div>
+</fieldset>
+<br>
+
+<span id="sonny"></span>
+
+<span id="stamp"></span>
+
+<script src="base-alpha-p1.js"></script>
+<script src="base-pulse-p2.js"></script>
+<script src="base-partitions-p3.js"></script>
+<script src="base-count-p4.js"></script>
+<script src="display-partition-p5.js"></script>
+<script src="display-rhythm-p6.js"></script>
+
+<script>
+  function brush() {
+    rhyFour()
+    rhyFive()
+
+rhySix()
+
+}
+
+brush()
+
+</script>
+
+<script>
+let sonny = document.getElementById(`sonny`)
+
+
+function showMe(){
+  let pardon;
+    for (let j = 0; j < pulses.length; j++) {
+      pardon = document.getElementById(`pardon${j}`)
+        if(pardon.checked){
+sonny.innerHTML += pardon.value
+
+
+        }
+
+    }
+}
+
+
+</script>
